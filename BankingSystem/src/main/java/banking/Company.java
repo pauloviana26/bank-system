@@ -1,10 +1,15 @@
 package banking;
 
-public class Company {
-	private String companyName;
-	private int taxId;
+import java.util.Random;
+
+public class Company extends AccountHolder {
+	private final String companyName;
+	private final int taxId;
+
+	private static final Random random = new Random();
 
 	public Company(String companyName, int taxId) {
+		super(random.nextInt());
 		this.companyName = companyName;
 		this.taxId = taxId;
 	}

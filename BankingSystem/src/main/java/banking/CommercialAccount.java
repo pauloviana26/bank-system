@@ -1,19 +1,22 @@
 package banking;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Account implementation for commercial (business) customers.
  * The account's holder is a {@link Company}.
  */
-public class CommercialAccount {
-    private List<Person> authorizedUsers;
+public class CommercialAccount extends Account {
+    private List<Person> authorizedUsers = new ArrayList<>();
     private Company company;
     private Long accountNumber;
     private int pin;
     private double startingDeposit;
 
     public CommercialAccount(Company company, Long accountNumber, int pin, double startingDeposit) {
+        super(company, accountNumber, pin, startingDeposit);
         this.company = company;
         this.accountNumber = accountNumber;
         this.pin = pin;
